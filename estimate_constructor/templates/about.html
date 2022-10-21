@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} About this app {% endblock %}</h1>
+<div>
+    <label for="title">&#169 {{ year }}, <a href="#">{{ creator }}</a></label>
+</div>
+{% endblock %}

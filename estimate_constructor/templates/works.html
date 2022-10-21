@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Works list {% endblock %}</h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Unit</th>
+        </tr>
+        </thead>
+    {% for work in works %}
+        <tr>
+            <td><a href="{{ url_for('constructor', work_id=work['id']) }}">{{ work['code'] }}</a></td>
+            <td>{{ work['name'] }}</td>
+            <td>{{ work['price'] }}</td>
+            <td>{{ work['unit'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

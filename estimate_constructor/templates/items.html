@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Items list {% endblock %}</h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Unit</th>
+        </tr>
+        </thead>
+    {% for item in items %}
+        <tr>
+            <td>{{ item['code'] }}</td>
+            <td><a href="{{ url_for('edit', id=item['id']) }}">{{ item['name'] }}</a></td>
+            <td>{{ item['price'] }}</td>
+            <td>{{ item['unit'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
